@@ -3,726 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Mathews - Kenya Handball Coach</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Bryan O. Mathews - Professional Handball Coach</title>
     <style>
         :root {
-            --primary: #006341; /* Kenyan green */
-            --secondary: #BB0000; /* Kenyan red */
-            --accent: #000000; /* Kenyan black */
-            --light: #FFFFFF;
-            --dark: #333333;
-            --highlight: #FFD700;
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --accent: #3498db;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
+            color: #333;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
         }
-        
-        /* Header & Navigation */
         header {
-            background-color: var(--light);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--light);
-            padding-top: 80px;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--light);
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid var(--secondary);
-        }
-        
-        .btn:hover {
-            background-color: transparent;
-            color: var(--secondary);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--light);
-            margin-left: 15px;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--light);
-            color: var(--dark);
-        }
-        
-        /* About Section */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 3px;
-            background-color: var(--secondary);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 30px;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .about-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Coaching Career */
-        .career {
-            background-color: #f9f9f9;
-        }
-        
-        .career-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .career-card {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-        
-        .career-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .career-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .career-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--accent);
-        }
-        
-        /* Philosophy */
-        .philosophy-item {
-            display: flex;
-            margin-bottom: 30px;
-            align-items: flex-start;
-        }
-        
-        .philosophy-icon {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-right: 20px;
-            margin-top: 5px;
-        }
-        
-        .philosophy-text h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--accent);
-        }
-        
-        /* Achievements */
-        .achievements {
             background-color: var(--primary);
-            color: var(--light);
-        }
-        
-        .achievements .section-title h2 {
-            color: var(--light);
-        }
-        
-        .achievements .section-title h2::after {
-            background-color: var(--highlight);
-        }
-        
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .achievement-card {
-            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
             padding: 30px;
-            border-radius: 10px;
             text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .achievement-card:hover {
-            transform: translateY(-10px);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .achievement-card i {
-            font-size: 3rem;
-            color: var(--highlight);
+            border-radius: 5px 5px 0 0;
             margin-bottom: 20px;
         }
-        
-        .achievement-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
         }
-        
-        /* Impact */
-        .impact-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
+        h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+            margin-top: 25px;
         }
-        
-        .impact-image {
-            flex: 1;
-            min-width: 300px;
+        h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
         }
-        
-        .impact-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .impact-text {
-            flex: 1;
-            min-width: 300px;
-            padding-left: 30px;
-        }
-        
-        /* Gallery */
-        .gallery {
-            background-color: #f9f9f9;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            height: 250px;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        /* Contact */
-        .contact {
-            text-align: center;
-        }
-        
         .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 50px;
+            margin: 10px 0;
+            font-size: 1.1em;
         }
-        
-        .contact-card {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            width: 250px;
-            transition: transform 0.3s;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .contact-card i {
-            font-size: 2rem;
-            color: var(--primary);
+        .section {
+            background-color: white;
+            padding: 20px;
             margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        
-        .social-links {
+        .experience-item, .qualification-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .experience-item:last-child, .qualification-item:last-child {
+            border-bottom: none;
+        }
+        .date-range {
+            font-weight: bold;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        .skills-container {
             display: flex;
-            justify-content: center;
-            margin-top: 30px;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: var(--light);
-            border-radius: 50%;
-            font-size: 1.2rem;
-            transition: all 0.3s;
+        .skill {
+            background-color: var(--light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
         }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-5px);
+        .accomplishments {
+            columns: 2;
+            column-gap: 30px;
         }
-        
-        /* Footer */
-        footer {
-            background-color: var(--accent);
-            color: var(--light);
-            text-align: center;
-            padding: 30px 0;
+        .accomplishment {
+            margin-bottom: 8px;
+            break-inside: avoid;
         }
-        
-        /* Responsive Design */
+        .reference {
+            margin-bottom: 15px;
+        }
+        .reference-name {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .reference-title {
+            font-style: italic;
+        }
         @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--light);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 40px;
-                transition: left 0.3s;
+            .accomplishments {
+                columns: 1;
             }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-text, .impact-text {
-                padding-right: 0;
-                padding-left: 0;
-                margin-bottom: 30px;
-            }
-            
-            .btn-outline {
-                margin-left: 0;
-                margin-top: 15px;
+            body {
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">BRIAN <span>MATHEWS</span></a>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#career">Career</a></li>
-                    <li><a href="#philosophy">Philosophy</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
-                    <li><a href="#impact">Impact</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <h1>BRYAN O. MATHEWS</h1>
+        <div class="contact-info">
+            <strong>IHF Level B Licensed Handball Coach | Sports Strategist</strong><br>
+            📞 +254 722 754 786 | ✉ Brilliantmathews@yahoo.com<br>
+            📍 P.O Box 41, Makongeni, Nairobi, Kenya
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Brian Mathews</h1>
-                <p>Head Coach - Kenya National Men's Handball Team<br>Former Captain & Professional Player</p>
-                <p>"Building champions through discipline, teamwork, and passion."</p>
-                <div class="hero-buttons">
-                    <a href="#about" class="btn">Learn More</a>
-                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                </div>
+    <div class="section">
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>I am a highly motivated exercise and Handball Coach who pursued Danish Handball Federation Exercise and Coaching Licence. I am currently a Level B IHF class coaching Licence holder. I have consistently demonstrated an ability to connect with fellow athletes and develop individualized plans for sports-related activities success by offering exceptional organizational and problem-solving skills. I am proactive in communication, both verbal and written with the ability to learn and adapt quickly to industry trends.</p>
+    </div>
+
+    <div class="section">
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+        
+        <div class="experience-item">
+            <div class="date-range">01/3/2007-01/5/2008</div>
+            <h3>Assistant Coach National Team U16</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">01/3/2007-01/06/2009</div>
+            <h3>Assistant Coach National Cereals and Produce Board</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">01/12/2010</div>
+            <h3>Member of statistics at the EHF Euro EHF/Swiss Timing team in Aarhus Denmark</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">01/01/2012-01/01/2013</div>
+            <h3>Head Coach IHF Mors(Denmark) U14 Boys</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">01/05/2013-01/05/2014</div>
+            <h3>Assistant Coach Stoholm(Denmark) 2nd Division for Men's team</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">06/05/2014-06/05/2016</div>
+            <h3>Head Coach U18 girls Grenå Austrup(Denmark)</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">01/05/2016-01/05/2019</div>
+            <h3>Head Coach U18, ladies senior team Nørre Djurs</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">10/06/2022</div>
+            <h3>Talent Development Kenya</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">24/09/2022</div>
+            <h3>Head Coach for U20 National Team Kenya Junior championship (3rd place)</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">01/06/2022-12/12/2024</div>
+            <h3>Head Coach NCPB Both Ladies and Men's Team</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">January-April 2023</div>
+            <h3>Head Coach NOCK Junior Camp</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">01/01/2024</div>
+            <h3>Head Coach Men's National team To Egypt ACN</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">March 2024 To Date</div>
+            <h3>Assistant Coach Men's Senior Team Kenya (All African Games)</h3>
+        </div>
+        
+        <div class="experience-item">
+            <div class="date-range">April 2024</div>
+            <h3>IHF Licence B Algerian (Oran)</h3>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>DUTIES & RESPONSIBILITIES</h2>
+        <ul>
+            <li>Tracked attendance and progress against goals for each participant</li>
+            <li>Assessed athlete's needs to develop effective training plans</li>
+            <li>Performed continuous evaluations of content and plans to enhance delivery</li>
+            <li>Developed and recorded materials for later courses or remote learners</li>
+            <li>Demonstrated use of sports equipment and monitored safety</li>
+            <li>Administered first aid in emergency situations</li>
+            <li>Scheduled appointments for athletes</li>
+            <li>Trained athletes from beginner to elite levels at Just be Master Handball-Academy</li>
+            <li>Served as Coach Instructor at Kenya Academy of Sports & Talanta Hela</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>ACCOMPLISHMENTS</h2>
+        <div class="accomplishments">
+            <div class="accomplishment">2006 - Best player (Kenyan National league)</div>
+            <div class="accomplishment">2007- Top scorer Kenya National league</div>
+            <div class="accomplishment">2008- Most Valuable players Kenya National league</div>
+            <div class="accomplishment">2009- Best player Århus Handball Academy</div>
+            <div class="accomplishment">2010 – Professional Handballer MORS/TYH LIGA (Top/Best League Denmark)</div>
+            <div class="accomplishment">2010- Best player 2nd Division Mors Thy(Danmark)</div>
+            <div class="accomplishment">2011- 1st runner up at the Celebrate Africa in Europe</div>
+            <div class="accomplishment">2012- Best defensive player</div>
+            <div class="accomplishment">2013- Winners 3rd division league and promoted to 2nd division(Mors Denmark)</div>
+            <div class="accomplishment">2016- Winners 3rd Division promoted to 2nd Division Nørre Djurs (Denmark)</div>
+            <div class="accomplishment">2021- Winners Kenya National league Men. 1st runners up Ladies</div>
+            <div class="accomplishment">2022 - Winners East and Central Africa Club Championship</div>
+            <div class="accomplishment">2023 - Winners Kenya National League Men, 1st runners up Ladies</div>
+            <div class="accomplishment">2023- Winners East and central Africa Club Championship.. 2nd runners up ladies team</div>
+            <div class="accomplishment">2024 - 5th Place Finish All African Games</div>
+            <div class="accomplishment">2024 Dec- Winners East and central Africa Club Championship – Rwanda</div>
+            <div class="accomplishment">22/02/2025 coach instructor at KAS (Kenya Academy of Sports)</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>QUALIFICATIONS</h2>
+        <div class="qualification-item">
+            <h3>Idrætshøjskolen Aarhus (2009-2010)</h3>
+            <ul>
+                <li>Danish Team Coach Class</li>
+                <li>General folk high school subjects</li>
+                <li>Project management subjects and lectures</li>
+            </ul>
+            
+            <h4>Expertise Areas:</h4>
+            <div class="skills-container">
+                <span class="skill">Practice</span>
+                <span class="skill">Training</span>
+                <span class="skill">Leadership</span>
+                <span class="skill">Club Contracts</span>
+                <span class="skill">Observing</span>
+                <span class="skill">Trainee</span>
+                <span class="skill">Instructor</span>
+                <span class="skill">Coach</span>
+                <span class="skill">Mentor</span>
+                <span class="skill">Facilitator</span>
+                <span class="skill">Strategic Planning</span>
+                <span class="skill">Progression</span>
+                <span class="skill">Performing</span>
+                <span class="skill">Goal-Setting</span>
+                <span class="skill">Data Analysis</span>
+                <span class="skill">Statistics</span>
+                <span class="skill">Digital Video</span>
+                <span class="skill">Conflict-Lab</span>
+                <span class="skill">Game-Plan</span>
+                <span class="skill">Flow Theory</span>
+                <span class="skill">Game-Phases</span>
+                <span class="skill">Danish Team Coach</span>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>A Leader in Kenyan Handball</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Profile Summary</h3>
-                    <p>Brian Mathews is a highly respected handball coach and former professional player with extensive experience in the sport. A former captain of the Kenya national handball team, he also played in Denmark's professional leagues before transitioning into coaching.</p>
-                    <p>With a passion for developing young talent and a strategic approach to the game, Brian has become one of the most influential figures in Kenyan handball, shaping the future of the sport at both club and national levels.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Brian Mathews coaching">
-                </div>
-            </div>
+        
+        <div class="qualification-item">
+            <h3>Handball Academy, Aarhus (2010)</h3>
+            <ul>
+                <li>Technical training</li>
+                <li>Tactical training</li>
+                <li>Physical training</li>
+                <li>Nutrition and Training</li>
+                <li>Team-Development</li>
+                <li>Mental training</li>
+                <li>Peak performing lifestyle</li>
+            </ul>
+            
+            <h4>Additional Studies:</h4>
+            <ul>
+                <li>Project design & leadership</li>
+                <li>Sports and culture theory</li>
+                <li>Win-Win methods</li>
+                <li>Development of plays</li>
+            </ul>
+            
+            <h4>Certifications:</h4>
+            <ul>
+                <li>Diploma in Culture and Sports Pilot</li>
+                <li>Diploma in Proactivist - Education</li>
+                <li>Danish Team Coach Class - Level 2</li>
+            </ul>
         </div>
-    </section>
+    </div>
 
-    <!-- Coaching Career -->
-    <section id="career" class="section career">
-        <div class="container">
-            <div class="section-title">
-                <h2>Coaching Career</h2>
-            </div>
-            <div class="career-grid">
-                <div class="career-card">
-                    <i class="fas fa-flag"></i>
-                    <h3>National Team</h3>
-                    <p>Current Head Coach of the Kenya National Men's Handball Team, focusing on tactical discipline and enhancing Kenya's competitiveness internationally.</p>
-                </div>
-                <div class="career-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Club Coaching</h3>
-                    <p>Head Coach of National Cereals and Produce Board (NCPB) Women's Handball Team, leading them to multiple league titles and championships.</p>
-                </div>
-                <div class="career-card">
-                    <i class="fas fa-trophy"></i>
-                    <h3>Recognition</h3>
-                    <p>Awarded StarTimes/SJAK Coach of the Month in December 2022 for outstanding performance and leadership in Kenyan handball.</p>
-                </div>
-            </div>
+    <div class="section">
+        <h2>REFERENCES</h2>
+        <div class="reference">
+            <div class="reference-name">Charles Omondi</div>
+            <div class="reference-title">DIRECTOR KENYA HANDBALL FEDERATION</div>
+            <div>0722980679</div>
+            <div>DIRECTOR NØRRE DJURS/GRENAA</div>
         </div>
-    </section>
-
-    <!-- Coaching Philosophy -->
-    <section id="philosophy" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Coaching Philosophy</h2>
-            </div>
-            <div class="philosophy-content">
-                <div class="philosophy-item">
-                    <div class="philosophy-icon">
-                        <i class="fas fa-chess"></i>
-                    </div>
-                    <div class="philosophy-text">
-                        <h3>Tactical Discipline</h3>
-                        <p>Emphasizing structured play, strategic execution, and adaptability to different game situations. Building teams that can read the game and make smart decisions under pressure.</p>
-                    </div>
-                </div>
-                <div class="philosophy-item">
-                    <div class="philosophy-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="philosophy-text">
-                        <h3>Youth Development</h3>
-                        <p>Investing in the next generation of players through comprehensive training programs, mentorship, and competitive opportunities to nurture Kenya's future handball stars.</p>
-                    </div>
-                </div>
-                <div class="philosophy-item">
-                    <div class="philosophy-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="philosophy-text">
-                        <h3>Mental Resilience</h3>
-                        <p>Developing strong, focused athletes who can maintain peak performance under pressure. Building character and sportsmanship alongside physical skills.</p>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="reference">
+            <div class="reference-name">Chris Ochieng</div>
+            <div class="reference-title">CEO GULFGROP</div>
+            <div>0702421655</div>
         </div>
-    </section>
-
-    <!-- Achievements -->
-    <section id="achievements" class="section achievements">
-        <div class="container">
-            <div class="section-title">
-                <h2>Achievements & Recognition</h2>
-            </div>
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <i class="fas fa-medal"></i>
-                    <h3>Multiple KHF Titles</h3>
-                    <p>Led NCPB Women's Team to multiple Kenya Handball Federation League championships</p>
-                </div>
-                <div class="achievement-card">
-                    <i class="fas fa-award"></i>
-                    <h3>Coach of the Month</h3>
-                    <p>StarTimes/SJAK Coach of the Month award in December 2022</p>
-                </div>
-                <div class="achievement-card">
-                    <i class="fas fa-trophy"></i>
-                    <h3>Regional Champion</h3>
-                    <p>East & Central Africa Club Championship Winner (2024)</p>
-                </div>
-                <div class="achievement-card">
-                    <i class="fas fa-star"></i>
-                    <h3>Player Development</h3>
-                    <p>Mentored numerous players who have gone on to represent Kenya internationally</p>
-                </div>
-            </div>
+        
+        <div class="reference">
+            <div class="reference-name">Aksel Nørgaard</div>
+            <div class="reference-title">SPORTS DIRECTOR IDRETSKOLEN ARHUS, DENMARK</div>
+            <div>+45 86 11 45 60</div>
         </div>
-    </section>
-
-    <!-- Impact -->
-    <section id="impact" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Impact on Kenyan Handball</h2>
-            </div>
-            <div class="impact-content">
-                <div class="impact-image">
-                    <img src="https://images.unsplash.com/photo-1540759786425-13ffbfd41c8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Brian coaching youth">
-                </div>
-                <div class="impact-text">
-                    <p>Beyond his coaching roles, Brian is deeply committed to the growth of handball in Kenya. He dedicates much of his free time mentoring young athletes and nurturing the next generation of handball players.</p>
-                    <p>He holds free handball clinics across the country, offering youth an opportunity to learn the game from an experienced coach and professional player. Brian is passionate about the development of the sport at the grassroots level and believes that structured youth programs are essential for the long-term success of Kenyan handball.</p>
-                    <p>His mentorship and clinics continue to inspire young athletes and contribute to the growth of the sport nationwide, creating pathways for talent development and professional opportunities in handball.</p>
-                </div>
-            </div>
+        
+        <div class="reference">
+            <div class="reference-name">Henrik Løvschall</div>
+            <div class="reference-title">MD, IDRETSKOLEN, DENMARK</div>
+            <div>+45 86 11 45 60</div>
         </div>
-    </section>
+    </div>
 
-    <!-- Gallery -->
-    <section id="gallery" class="section gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Gallery</h2>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Handball action">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Coaching session">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1540759786425-13ffbfd41c8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Youth training">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1571019614243-cf8a6d87adc5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Team huddle">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-            </div>
-            <p>Interested in handball clinics, coaching seminars, or collaboration opportunities?</p>
-            <div class="contact-info">
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>brian.mathews@bmsports.com</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h3>Phone</h3>
-                    <p>+254 722754786</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Location</h3>
-                    <p>Nairobi, Kenya</p>
-                </div>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Brian Mathews - Kenya National Men's Handball Team Coach</p>
-            <p>Designed with passion for the game</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                document.querySelector('.nav-links').classList.remove('active');
-            });
-        });
-
-        // Add shadow to header on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-    </script>
+    <div class="section">
+        <h2>OBJECTIVES</h2>
+        <ul>
+            <li>To be part of the working team, work with minimal or without supervision.</li>
+            <li>To positively and industriously participate in teamwork in order to realize greater achievements and continue acquiring skills and use the acquired skills to work efficiently.</li>
+            <li>To bring a positive impact to the players team and also develop a winning mentality with the players and the technical unit.</li>
+            <li>To add value to the athletics department and the institution in general.</li>
+        </ul>
+    </div>
 </body>
 </html>
